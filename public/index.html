@@ -48,8 +48,9 @@
         }
 
         window.addEventListener('orientationchange', (event) => {
-            console.log('orientationchange');
-            updateViewport();
+            // Так как viewport нельзя изменить после загрузки, перезагружаем страницу при повороте
+            // (может быть проблемой если заполняли форму она не сохранится)
+            window.location.reload();
         });
 
         updateViewport();
